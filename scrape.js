@@ -1,7 +1,7 @@
 const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
-const writeStream = fs.createWriteStream("road_safety_in_europe.csv");
+const writeStream = fs.createWriteStream("data/road_safety_in_europe.csv");
 
 const cols = [
   "Country",
