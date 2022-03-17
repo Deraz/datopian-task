@@ -1,10 +1,10 @@
 # Datopian Task
 
-Hello, this is Yehia Deraz from Cairo, Egypt. And, this is the README for a the task.
+Hello, this is Yehia Deraz from Cairo, Egypt. And, this is the README for the task.
 
 ## Installation
 
-Use npm to install the project dependencies
+Use npm to install the project dependencies.
 
 ```bash
 npm install
@@ -12,7 +12,7 @@ npm install
 
 ## Usage
 
-You can run the script by running the below command in your terminal. You'll find the created CSV in the same directory under the name of `road_safety_in_europe.csv`
+You can run the script by running the below command in your terminal. You'll find the created CSV in the same directory under the name of `road_safety_in_europe.csv`.
 
 ```bash
 node scrape
