@@ -18,10 +18,9 @@ const data = [];
 
 // Write Headers
 cols.forEach((column, i) => {
-  i != cols.length - 1
-    ? writeStream.write(`${column},`)
-    : writeStream.write(`${column}`);
+  writeStream.write(`${column},`);
 });
+writeStream.write("Year");
 
 request(
   "https://en.wikipedia.org/wiki/Road_safety_in_Europe",
@@ -45,12 +44,11 @@ request(
                 if (indexOfSpecialCharacter > -1)
                   value = value.substring(0, indexOfSpecialCharacter);
                 newObj[cols[columnId].replace(/\s/g, "")] = value;
-                j != 8
-                  ? writeStream.write(`${value},`)
-                  : writeStream.write(`${value}`);
+                writeStream.write(`${value},`);
                 columnId++;
               }
             });
+          writeStream.write("2018");
           data.push(newObj);
         });
 
