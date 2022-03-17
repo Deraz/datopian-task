@@ -18,6 +18,12 @@ You can run the script by running the below command in your terminal. You'll fin
 node scrape
 ```
 
+OR
+
+```bash
+npm start
+```
+
 ## Algorithm
 
 A constant is created for the columns names alongside with an empty array for the data. A request is made to the Wikipedia page and the response is parsed using `cheerio` by looping through all the `tr` and the `td` tags inside the requires table.
