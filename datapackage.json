@@ -1,0 +1,77 @@
+{
+  "name": "data",
+  "title": "Data",
+  "resources": [
+    {
+      "path": "road_safety_in_europe.csv",
+      "pathType": "local",
+      "name": "road_safety_in_europe",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "ISO-8859-1",
+      "dialect": {
+        "delimiter": ",",
+        "quoteChar": "\""
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Country",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Area",
+            "type": "number",
+            "format": "default"
+          },
+          {
+            "name": "Population",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "GDP Per Capita",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Population Density",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Vehicle Ownership",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Total Road Deaths",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Road Death Per Million Inhabitants",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Year",
+            "type": "year",
+            "format": "default"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "licenses": [
+    {
+      "name": "ODC-PDDL",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License"
+    }
+  ]
+}
