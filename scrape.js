@@ -45,22 +45,20 @@ request(
                 //Remove commas as it conflicts with CSVs, obviously.
                 let value = $(td).text().trim().replace(/,/g, "");
 
-                //Remove Special Character "†" and the following letter
-                let indexOfSpecialCharacter = value.indexOf("†");
-                if (indexOfSpecialCharacter > -1)
-                  value = value.substring(0, indexOfSpecialCharacter);
+                //Remove all characters except digits and decimal points and parse float
+                //j equalse 0 for the first column: Country
+                if (j != 0)
+                  value = parseFloat(value.replace(/(?=\D)([^.])/g, ""));
 
-                newObj[cols[columnId].replace(/\s/g, "")] =
-                  j == 0 ? value : parseInt(value);
-
+                newObj[prepareColumnKey(cols[columnId])] = value;
                 stream += `${value},`;
                 columnId++;
               }
             });
 
           stream += "2018";
-          newObj.Year = 2018;
-          newObj.Stream = stream;
+          newObj.year = 2018;
+          newObj.stream = stream;
 
           data.push(newObj);
         });
@@ -69,14 +67,19 @@ request(
       data
         .sort(
           (a, b) =>
-            a.RoadDeathPerMillionInhabitants - b.RoadDeathPerMillionInhabitants
+            a.roadDeathPerMillionInhabitants - b.roadDeathPerMillionInhabitants
         )
         //then looping on the sorted data to write in the CSV.
         .forEach((row) => {
-          writeStream.write(row.Stream);
+          writeStream.write(row.stream);
         });
-
       console.log("Scraping Done..."); //Wohooo!
     }
   }
 );
+
+//Lower cases the first letter and remove white spaces between words
+const prepareColumnKey = (key) => {
+  key = key.slice(0, 1).toLowerCase() + key.slice(1);
+  return key.replace(/\s/g, "");
+};
