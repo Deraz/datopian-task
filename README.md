@@ -2,6 +2,8 @@
 
 Hello, this is Yehia Deraz from Cairo, Egypt. And, this is the README for the task.
 
+![Screen video fromt the page](https://media.giphy.com/media/Ta1qel9zGy9aThbPpU/giphy.gif)
+
 ## Installation
 
 Use npm to install the project dependencies.
